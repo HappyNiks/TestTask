@@ -42,7 +42,7 @@
     </header>
 
     <div class="container">
-        <form action="">
+        <form action="calc.php" method="post">
             <h2>Калькулятор</h2>
             <ul class="wrapper">
                 <li class="form-row">
@@ -79,7 +79,7 @@
                     oninput="document.getElementById('recharge1').value = this.value">
                 </li>
                 <li class="form-row">
-                    <button class="CalcButton">Рассчитать</button>
+                    <button class="CalcButton" type="submit">Рассчитать</button>
                     <label>Результат:</label>
                 </li>
             </ul>
