@@ -5,6 +5,7 @@
 	<title>TEST</title>
 
 	<link href="styles.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="header">
@@ -42,45 +43,45 @@
     </header>
 
     <div class="container">
-        <form action="calc.php" method="post">
+        <form id="calc" action="calc.php" method="post">
             <h2>Калькулятор</h2>
             <ul class="wrapper">
                 <li class="form-row">
                     <label for="dateofregister">Дата оформления вклада</label>
-                    <input type="date" id="dateofregister">
+                    <input type="date" id="dateofregister" name="dateofregister">
                 </li>
                 <li class="form-row">
                     <label for="sum">Сумма вклада</label>
-                    <input type="number" id="sum1" value="10000" min="1000" max="3000000" step="1000"
+                    <input type="number" id="sum1" name="sum1" value="10000" min="1000" max="3000000" step="1000"
                     oninput="document.getElementById('sum2').value = this.value">
                     <input type="range" id="sum2" value="10000" min="1000" max="3000000" step="1000"
                     oninput="document.getElementById('sum1').value = this.value">
                 </li>
                 <li class="form-row">
                     <label for="period">Срок вклада</label>
-                    <select id="period">
-                        <option value="1">1 год</option>
-                        <option value="2">2 года</option>
-                        <option value="3">3 года</option>
-                        <option value="4">4 года</option>
-                        <option value="5">5 лет</option>
+                    <select id="period" name="period">
+                        <option value="12">1 год</option>
+                        <option value="24">2 года</option>
+                        <option value="36">3 года</option>
+                        <option value="48">4 года</option>
+                        <option value="60">5 лет</option>
                     </select>
                 </li>
                 <li class="form-row">
                     <label for="">Пополнение вклада</label>
-                    <input checked type="radio">Нет
-                    <input type="radio">Да
+                    <input checked type="radio" name="no" id="no" class="radio">Нет
+                    <input type="radio" name="yes" id="yes" class="radio">Да
                 </li>
                 <li class="form-row">
                     <label for="recharge">Сумма пополнения вклада</label>
-                    <input type="number" id="recharge1" value="10000" min="1000" max="3000000" step="1000"
+                    <input disabled type="number" id="recharge1" name="recharge1" value="10000" min="1000" max="3000000" step="1000"
                     oninput="document.getElementById('recharge2').value = this.value">
-                    <input type="range" id="recharge2" value="10000" min="1000" max="3000000" step="1000"
+                    <input disabled type="range" id="recharge2" value="10000" min="1000" max="3000000" step="1000"
                     oninput="document.getElementById('recharge1').value = this.value">
                 </li>
                 <li class="form-row">
                     <button class="CalcButton" type="submit">Рассчитать</button>
-                    <label>Результат:</label>
+                    <label id="result">Результат:</label>
                 </li>
             </ul>
         </form>
@@ -100,5 +101,7 @@
             </div>
         </div>
     </footer>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
