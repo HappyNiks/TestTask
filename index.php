@@ -48,12 +48,12 @@
             <ul class="wrapper">
                 <li class="form-row">
                     <label for="dateofregister">Дата оформления вклада</label>
-                    <input type="date" id="dateofregister" name="dateofregister">
+                    <input type="date" id="dateofregister" name="dateofregister" required>
                 </li>
                 <li class="form-row">
                     <label for="sum">Сумма вклада</label>
                     <input type="number" id="sum1" name="sum1" value="10000" min="1000" max="3000000" step="1000"
-                    oninput="document.getElementById('sum2').value = this.value">
+                    oninput="document.getElementById('sum2').value = this.value" required>
                     <input type="range" id="sum2" value="10000" min="1000" max="3000000" step="1000"
                     oninput="document.getElementById('sum1').value = this.value">
                 </li>
@@ -75,7 +75,7 @@
                 <li class="form-row">
                     <label for="recharge">Сумма пополнения вклада</label>
                     <input disabled type="number" id="recharge1" name="recharge1" value="10000" min="1000" max="3000000" step="1000"
-                    oninput="document.getElementById('recharge2').value = this.value">
+                    oninput="document.getElementById('recharge2').value = this.value" required>
                     <input disabled type="range" id="recharge2" value="10000" min="1000" max="3000000" step="1000"
                     oninput="document.getElementById('recharge1').value = this.value">
                 </li>

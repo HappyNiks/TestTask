@@ -33,7 +33,7 @@ $summn = $list['sum1'];
 $period = explode("-", $list['dateofregister']);
 $percent = 0.1;
 if ($replenish === 'yes'){
-    $summadd = $list['recharge1'];
+    $summadd = intval($list['recharge1']);
     for ($i = 1; $i < intval($list['period']); $i++){
         $summn1 = $summn;
         $daysn = cal_days_in_month(CAL_GREGORIAN, intval($period[1]), intval($period[0]));
